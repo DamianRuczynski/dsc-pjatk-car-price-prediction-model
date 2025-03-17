@@ -1,0 +1,18 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+TRAIN_FILE_NAME = "data/sales_ads_train.csv"
+
+df = pd.read_csv(TRAIN_FILE_NAME)
+
+df = df.dropna(subset=["Skrzynia_biegow"])
+
+
+plt.figure(figsize=(20, 15))
+
+plt.tight_layout()
+sns.countplot(x="Skrzynia_biegow", data=df, palette='viridis')
+plt.title("Transmission Type", fontsize = 20)
+plt.show()
+plt.show()
